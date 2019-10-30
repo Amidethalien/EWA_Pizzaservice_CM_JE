@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background-color: darkgray;
+}
+
+nav {
+    overflow: hidden;
+    background-color: #333;
+
+}
+
+button {
+
+    float: left;
+    color: darkgray;
+    text-align: center;
+    padding: 18px;
+    background-color: #333;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 17px;
+
+}
+
+button:hover {
+    color: black;
+    background-color: lightgray;
+}
+
+.active {
+    color: lightgray;
+    background-color: darkgreen;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-flex;
+}
