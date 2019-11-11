@@ -46,3 +46,15 @@ footer {
     left: 0;
     display: inline-flex;
 }
+
+#shoppingCart {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}

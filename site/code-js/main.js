@@ -9,19 +9,20 @@
   * \return no return value
   *
   */
-function toggleNav() {
+function toggleCart() {
 
-    var width = document.getElementById("navBar").offsetWidth;
+    var width = document.getElementById("shoppingCart").offsetWidth;
     //alert(width);
 
     if (width == 0) {
-        document.getElementById("navBar").style.width = "20%";
+        document.getElementById("contentHolder").style.width = "80%";
+        document.getElementById("shoppingCart").style.width = "20%";
     } else {
-        document.getElementById("navBar").style.width = "0";
+        document.getElementById("shoppingCart").style.width = "0";
+        document.getElementById("contentHolder").style.width = "80%";
     }
 
 }
-
 
  /**
   * \brief Toggles Drawer
