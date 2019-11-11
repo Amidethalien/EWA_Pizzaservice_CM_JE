@@ -133,7 +133,7 @@ class Fahrer extends Page
 
 // This call is starting the creation of the page. 
 // That is input is processed and output is created.
-PageTemplate::main();
+Fahrer::main();
 
 // Zend standard does not like closing php-tag!
 // PHP doesn't require the closing tag (it is assumed when the file ends). 
