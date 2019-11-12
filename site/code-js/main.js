@@ -34,20 +34,17 @@ function toggleCart() {
  *
  */
 function collapseDrawer() {
-    //alert(event.srcElement.id);
     var collapsible = event.srcElement; // gets executor
 
     event.srcElement.classList.toggle("active");
 
-
     var drawerContent = event.srcElement.nextElementSibling;
-
-
     if (drawerContent.style.maxHeight) {
         drawerContent.style.maxHeight = null;
     } else {
         drawerContent.style.maxHeight = drawerContent.scrollHeight + "px";
     }
+
 
 }
 
