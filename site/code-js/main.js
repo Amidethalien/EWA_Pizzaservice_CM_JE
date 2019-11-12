@@ -19,7 +19,7 @@ function toggleCart() {
         document.getElementById("shoppingCart").style.width = "20%";
     } else {
         document.getElementById("shoppingCart").style.width = "0";
-        document.getElementById("contentHolder").style.width = "80%";
+        document.getElementById("contentHolder").style.width = "100%";
     }
 
 }
