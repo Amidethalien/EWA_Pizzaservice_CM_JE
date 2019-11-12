@@ -12,7 +12,7 @@ create table Pizza(
 create table Bestellung(
 	BestellID		int primary key,
 	Adresse			varchar(255),
-	Bestellzeitpunkt	date
+	Bestellzeitpunkt	date DEFAULT CURRENT_TIMESTAMP
 );
 
 create table Bestellte_Pizza(
