@@ -84,7 +84,7 @@ class Fahrer extends Page
     protected function generateView() 
     {
         $this->getViewData();
-        $this->generatePageHeader('to do: change headline');
+        $this->generatePageHeader('Fahrer');
         // to do: call generateView() for all members
         // to do: output view of this page
         $this->generatePageFooter();

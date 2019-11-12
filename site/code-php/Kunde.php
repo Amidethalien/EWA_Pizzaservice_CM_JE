@@ -84,7 +84,7 @@ class Kunde extends Page
     protected function generateView() 
     {
         $this->getViewData();
-        $this->generatePageHeader('to do: change headline');
+        $this->generatePageHeader('Kunde');
         // to do: call generateView() for all members
         // to do: output view of this page
         $this->generatePageFooter();
