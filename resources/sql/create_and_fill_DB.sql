@@ -17,10 +17,9 @@ create table Bestellung(
 
 create table Bestellte_Pizza(
 	BP_ID			int primary key,
-	fPizzaID		int,
+	PizzenID		varchar(255),
 	fBestellID		int,
 	BP_Status		varchar(255),
-	constraint foreign key (fPizzaID) references  Pizza(PizzaID) on delete cascade on update restrict,
 	constraint foreign key (fBestellID) references  Bestellung(BestellID) on delete cascade on update restrict
 )engine = innodb;
 
