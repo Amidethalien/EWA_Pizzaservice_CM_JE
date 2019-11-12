@@ -37,9 +37,42 @@
 
         <embed id="contentHolder" src="html/Bestellung.html" width=100% height="1000" style="overflow-x: hidden;">
 
-        <div id="shoppingCart"></div>
+        <div id="shoppingCart">
 
-        <button style="cursor:pointer; position: absolute; right: 0px; padding: 10px" class="drawerButton" onclick="toggleCart()">&#128722;</button>
+            <button style="cursor:pointer; top 0; width: 100%; z-index: 10; text-align: left;" class="drawerButton" disabled>Shoppingcart</button>
+
+
+            <div style="position: fixed; right: 0px;">
+                <button style="cursor:pointer; padding: 10px" class="drawerButton" onclick="toggleCart()">&#128722;</button>
+                <div class="cartContents" style="background-color: crimson; border-radius: 20%; text-align: center">5</div>
+            </div>
+
+
+            <!--<button id="warentemplate" style="width: 100%; color: black" onclick="collapseDrawer()">
+                
+                <div > <img src="/site/Images/testi_pizza.png" alt="Krasse Pizza" width="20%" height="20%">
+                    <div>Warenname</div>
+                </div>
+
+                <span style="position: absolute;">
+                    <button style="padding:0; background-color:orangered;color: black; border-radius: 25%">+</button>
+                    <div>5</div>
+                    <button style="padding:0; background-color:orangered;color: black; border-radius: 25%"> - </button>
+                </span>
+                
+                <div class="drawerContent">
+                    <button class="drawerButton">1</button>
+                    <button class="drawerButton">2</button>
+                    <button class="drawerButton">3</button>
+                </div>
+            </button>-->
+            <div>content 1</div>
+            <div>content 2</div>
+            <div>content 3</div>
+
+        </div>
+
+
 
     </main>
 
@@ -51,4 +84,6 @@
 
 </footer>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="code-js/main.js"></script></html>
+<script src="code-js/main.js"></script>
+
+</html>
