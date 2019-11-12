@@ -76,9 +76,18 @@ abstract class Page
     {
         $headline = htmlspecialchars($headline);
         header("Content-type: text/html; charset=UTF-8");
-        
-        // to do: output common beginning of HTML code 
-        // including the individual headline
+        echo <<<HEAD
+        <!DOCTYPE html>
+        <html lang="de">
+            <head>
+                <meta charset="UTF-8" />
+                <!-- für später: CSS include -->
+                <!-- <link rel="stylesheet" href="XXX.css"/> -->
+                <!-- für später: JavaScript include -->
+                <!-- <script src="XXX.js"></script> -->
+                <title>$headline</title>
+            </head>
+HEAD;
     }
 
     /**

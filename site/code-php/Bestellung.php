@@ -86,55 +86,42 @@ class Bestellung extends Page
         $this->getViewData();
         $this->generatePageHeader('Bestellung');
         // to do: call generateView() for all members
-echo <<<HEAD
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <style>
-        table, th, td {
-            border: 1px solid white;
-        }
-        body {
-            background-image: url(../Images/Fire.png);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-    </style>
-    <meta charset="UTF-8" />
-    <!-- für später: CSS include -->
-    <!-- <link rel="stylesheet" href="XXX.css"/> -->
-    <!-- für später: JavaScript include -->
-    <!-- <script src="XXX.js"></script> -->
-    <title>Der Testi Pizza Bestellservice</title>
-</head>
-HEAD;
-echo <<<MAIN
-<body>
-    <h1 style="color: white">Testi Pizza Bestellservice</h1>
-    <br>
-    <h2 style="color: white">Bestellungen</h2>
-    <br>
-    <section>
-        <h3 style="color: white">Speisekarte</h3>
-        <div>
-            <ul>
-                <li style="color: white">Krasse Pizza<br/><span data-price-euro="5,50">5,50</span>€<br>
-                    <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="100" height="100" >
-                    <button>In den Warenkorb</button></li>
-                <li style="color: white">Tee Pizza<br><span data-price-euro="6,50">6,50</span>€<br>
-                    <img src="../Images/testi_pizza.png" alt="Tee Pizza" width="100" height="100" >
-                    <button>In den Warenkorb</button></li>
-                <li style="color: white">Coole Pizza<br><span>8,50</span>€<br>
-                    <img src="../Images/testi_pizza.png" alt="Coole Pizza" width="100" height="100" >
-                    <button>In den Warenkorb</button></li>
-            </ul>
-        </div>
-    </section>
+        echo <<<MAIN
+        <body>
+            <style>
+                table, th, td {
+                    border: 1px solid white;
+                }
+                body {
+                    background-image: url(../Images/Fire.png);
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+                }
+            </style>
+            <h1 style="color: white">Testi Pizza Bestellservice</h1>
+            <br>
+            <h2 style="color: white">Bestellungen</h2>
+            <br>
+            <section>
+            <h3 style="color: white">Speisekarte</h3>
+            <div>
+                <ul>
+                    <li style="color: white">Krasse Pizza<br/><span data-price-euro="5,50">5,50</span>€<br>
+                        <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="100" height="100" >
+                        <button>In den Warenkorb</button></li>
+                    <li style="color: white">Tee Pizza<br><span data-price-euro="6,50">6,50</span>€<br>
+                        <img src="../Images/testi_pizza.png" alt="Tee Pizza" width="100" height="100" >
+                        <button>In den Warenkorb</button></li>
+                    <li style="color: white">Coole Pizza<br><span>8,50</span>€<br>
+                        <img src="../Images/testi_pizza.png" alt="Coole Pizza" width="100" height="100" >
+                        <button>In den Warenkorb</button></li>
+                </ul>
+            </div>
+        </section>
 MAIN;
-    echo <<<WARENKORB
-    <section>
-        
+        echo <<<WARENKORB
+        <section>
         <h3 style="color: white">Warenkorb</h3>
         <div>
             <select name="Warenkorb[]" size="5" multiple>
@@ -154,7 +141,6 @@ MAIN;
         </form>
         <button>Verwerfen</button>
 WARENKORB;
-
         // to do: output view of this page
         $this->generatePageFooter();
     }
