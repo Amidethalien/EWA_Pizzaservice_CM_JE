@@ -87,6 +87,10 @@ class Kunde extends Page
         $this->generatePageHeader('Kunde');
         // to do: call generateView() for all members
         // to do: output view of this page
+        echo <<<Testi
+        <p>Hallo Welt</p> 
+Testi;
+
         $this->generatePageFooter();
     }
     
