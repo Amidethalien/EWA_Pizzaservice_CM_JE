@@ -1,0 +1,1 @@
+https://www.php.net/manual/de/mysqli.query.php
