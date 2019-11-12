@@ -1,62 +1,66 @@
 // Functions here:
 
- /**
-  * \brief Toggles Navigationbar
-  *
-  *     Toggles the Css width of Navabr
-  *
-  * \param no Parameter Used
-  * \return no return value
-  *
-  */
-function toggleNav() {
+/**
+ * \brief Toggles Navigationbar
+ *
+ *     Toggles the Css width of Navabr
+ *
+ * \param no Parameter Used
+ * \return no return value
+ *
+ */
+function toggleCart() {
 
-    var width = document.getElementById("navBar").offsetWidth;
+    var width = document.getElementById("shoppingCart").offsetWidth;
     //alert(width);
 
     if (width == 0) {
-        document.getElementById("navBar").style.width = "20%";
+        document.getElementById("contentHolder").style.width = "80%";
+        document.getElementById("shoppingCart").style.width = "20%";
     } else {
-        document.getElementById("navBar").style.width = "0";
+        document.getElementById("shoppingCart").style.width = "0";
+        document.getElementById("contentHolder").style.width = "80%";
+    }
+
+}
+
+/**
+ * \brief Toggles Drawer
+ *
+ *     Toggles the Css height of daughter Element
+ *
+ * \param no Parameter Used
+ * \return no return value
+ *
+ */
+function collapseDrawer() {
+    //alert(event.srcElement.id);
+    var collapsible = event.srcElement; // gets executor
+
+    event.srcElement.classList.toggle("active");
+
+
+    var drawerContent = event.srcElement.nextElementSibling;
+
+
+    if (drawerContent.style.maxHeight) {
+        drawerContent.style.maxHeight = null;
+    } else {
+        drawerContent.style.maxHeight = drawerContent.scrollHeight + "px";
     }
 
 }
 
 
- /**
-  * \brief Toggles Drawer
-  *
-  *     Toggles the Css height of daughter Element
-  *
-  * \param no Parameter Used
-  * \return no return value
-  *
-  */
-function collapseDrawer() {
-	//alert(event.srcElement.id);
-	var collapsible = event.srcElement; // gets executor
-	
-    event.srcElement.classList.toggle("active");
-	
-	var drawerContent = event.srcElement.nextElementSibling;
-    if (drawerContent.style.maxHeight){
-      drawerContent.style.maxHeight = null;
-    } else {
-      drawerContent.style.maxHeight = drawerContent.scrollHeight + "px";
-    } 
-	
-}
-
-
- /**
-  * \brief Toggles Drawer
-  *
-  *     Toggles the Css height of daughter Element
-  *
-  * \param no Parameter Used
-  * \return no return value
-  *
-  */
+/**
+ * \brief Toggles Drawer
+ *
+ *     Toggles the Css height of daughter Element
+ *
+ * \param no Parameter Used
+ * \return no return value
+ *
+ */
 function toggleNav() {
 
     var width = document.getElementById("navBar").offsetWidth;
