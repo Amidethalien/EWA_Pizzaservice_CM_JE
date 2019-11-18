@@ -1,0 +1,25 @@
+Mysql instructions 
+
+retrieve all Pizzas:
+
+SELECT * FROM 'pizza';
+
+retrieve sepcified Pizza:
+
+SELECT * FROM 'pizza' WHERE PizzaID = $ID ;
+-- pizza in for schleife an der position der liste / vectors parsen und abrufen 
+
+retieve list from order:
+
+SELECT * FROM 'bestellte_pizza' WHERE BP_ID = $Ordernumber;
+
+retrieve PizzaIDList: 
+
+SELECT PizzaID FROM 'bestellte_pizza' WHERE WHERE BP_ID = $Ordernumber;
+
+send PizzaIDList:
+
+INSERT INTO `bestellte_pizza`(`BP_ID`, `fPizzaID`, `fBestellID`, `BP_Status`) VALUES ([$SessionID],[$PizzaIDList],[value-3],[$Basesatus])
+
+
+

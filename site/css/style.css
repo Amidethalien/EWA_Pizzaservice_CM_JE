@@ -1,10 +1,10 @@
-body {
+.body {
     margin: 0;
     font-family: "Lato", sans-serif;
     background-color: darkgray;
 }
 
-nav {
+.nav {
     position: absolute;
     z-index: 15;
     width: 100%;
@@ -13,7 +13,7 @@ nav {
 
 }
 
-button {
+.button {
 
     float: left;
     color: darkgray;
@@ -27,7 +27,7 @@ button {
 
 }
 
-button:hover {
+.button:hover {
     color: black;
     background-color: lightgray;
 }
@@ -103,5 +103,3 @@ footer {
   padding-top: 60px;
     z-index: 5;
 }
-
-

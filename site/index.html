@@ -44,37 +44,60 @@
 
             <div style="position: fixed; right: 0px;">
                 <button style="cursor:pointer; padding: 10px" class="drawerButton" onclick="toggleCart()">&#128722;</button>
-                <div class="cartContents" style="background-color: crimson; border-radius: 20%; text-align: center">5</div>
+                <div class="cartContents" style="background-color: crimson; border-radius: 20%; text-align: center">2</div>
             </div>
 
-            <div id="warentemplate" style="width: 100%; display: inline-table;" onclick="collapseDrawer()">
-                <div style="display: inline; float: left;">
-                    <img src="/site/Images/testi_pizza.png" alt="Krasse Pizza" width="30%" height="30%" style="float: left;">
-                    <div>TeePizza <span>5.99€</span>
-                        <div style=" display: inline-block;">
-                    <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%">+</button>
-                    <div>1</div>
-                    <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%"> - </button>
-                        </div>
 
-
-
+            <!-- Warentemplate begins here -->
+            <div id="warentemplate" style="width: 100%; display: inline-table; position: relative;" onclick="collapseDrawer()">
+                <div style="display: inline; float: left; pointer-events: none;">
+                    <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="30%" height="30%" style="float: left;">
+                    <div>TeePizza <span>6.50€</span>
 
                     </div>
 
-
-
+                    <div style=" position: absolute; display:inline-flex; right: 2.5%; bottom:0;">
+                        <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%; pointer-events: all;">+</button>
+                        <div>1</div>
+                        <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%; padding-left: 2px; padding-right: 3px; text-align: center;  pointer-events: all;">-</button>
+                    </div>
 
                 </div>
 
-
             </div>
-
+            <!-- optional drawer -->
             <div class="drawerContent">
                 <button class="drawerButton">Sardellen</button>
                 <button class="drawerButton">Artischocke</button>
                 <button class="drawerButton">Pilze</button>
             </div>
+
+            <!-- Warentemplate ends here -->
+
+            <!-- Warentemplate begins here -->
+            <div id="warentemplate" style="width: 100%; display: inline-table; position: relative;" onclick="collapseDrawer()">
+                <div style="display: inline; float: left;">
+                    <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="30%" height="30%" style="float: left;">
+                    <div>Krasse Pizza<span>5.50€</span>
+                        <div style=" position: absolute; display:inline-flex; right: 2.5%; bottom:0;">
+                            <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%">+</button>
+                            <div>1</div>
+                            <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%; padding-left: 2px; padding-right: 3px; text-align: center;">-</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- optional drawer -->
+            <div class="drawerContent">
+                <button class="drawerButton">Sardellen</button>
+                <button class="drawerButton">Artischocke</button>
+                <button class="drawerButton">Pilze</button>
+            </div>
+
+            <!-- Warentemplate ends here -->
 
 
 
