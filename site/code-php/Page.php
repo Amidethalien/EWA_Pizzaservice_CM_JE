@@ -50,6 +50,13 @@ abstract class Page
     protected function __construct() 
     {
      //   $this->_database = /* to do: create instance of class MySQLi */;
+        $this->_database = new mysqli("localhost", "root", "", "Testi_Pizzaservice_DB");
+
+        /* check connection */
+        if ($this->_database->connect_errno) {
+            printf("Connect failed: %s\n", $this->_database->connect_error);
+            exit();
+        }
     }
     
     /**
