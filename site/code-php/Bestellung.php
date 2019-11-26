@@ -120,7 +120,15 @@ class Bestellung extends Page
             <h3 style="color: white">Speisekarte</h3>
             <div>
                 <ul>
-                    <li style="color: white">Krasse Pizza<br/><span data-price-euro="5,50">5,50</span>€<br>
+MAIN;
+                    for($i=0; $i<count($this->_pizzaName); $i++){
+                        echo "<li style=\"color: white\">";
+                        echo $this->_pizzaName[$i];
+                        echo "<br/><span data-price-euro=\"5,50\">5,50</span>€<br>
+                        <img src=\"../Images/testi_pizza.png\" alt=\"Krasse Pizza\" width=\"100\" height=\"100\" >
+                        <button>In den Warenkorb</button></li>";
+                    }
+                    /**<li style="color: white">Krasse Pizza<br/><span data-price-euro="5,50">5,50</span>€<br>
                         <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="100" height="100" >
                         <button>In den Warenkorb</button></li>
                     <li style="color: white">Tee Pizza<br><span data-price-euro="6,50">6,50</span>€<br>
@@ -129,10 +137,12 @@ class Bestellung extends Page
                     <li style="color: white">Coole Pizza<br><span>8,50</span>€<br>
                         <img src="../Images/testi_pizza.png" alt="Coole Pizza" width="100" height="100" >
                         <button>In den Warenkorb</button></li>
+                     */
+                echo <<<EOT
                 </ul>
             </div>
         </section>
-MAIN;
+EOT;
         echo <<<WARENKORB
         <section>
         <h3 style="color: white">Warenkorb</h3>
