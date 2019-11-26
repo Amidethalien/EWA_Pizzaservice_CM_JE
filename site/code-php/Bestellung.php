@@ -34,7 +34,8 @@ require_once './Page.php';
 class Bestellung extends Page
 {
     // to do: declare reference variables for members
-    protected $_resultSet=null;
+    protected $_pizzaName=array();
+    protected $_pizzaPreis=array();
     // representing substructures/blocks
     
     /**
@@ -71,7 +72,17 @@ class Bestellung extends Page
     protected function getViewData()
     {
         // to do: fetch data for this view from the database
-
+        $sql="Select pizzaname, preis from Pizza";
+        $recordset=$this->_database->query($sql);
+        if (!$recordset)
+            throw new Exception("Fehler in Abfrage: ".$this->database->error);
+        $a=0;
+        while ($record=$recordset->fetch_assoc()){
+            $this->_pizzaName[$a]=$record["pizzaname"];
+            $this->_pizzaPreis[$a]=$record["preis"];
+            $a++;
+        }
+        $recordset->free();
     }
     
     /**
