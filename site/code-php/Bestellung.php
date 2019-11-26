@@ -33,7 +33,8 @@ require_once './Page.php';
  */
 class Bestellung extends Page
 {
-    // to do: declare reference variables for members 
+    // to do: declare reference variables for members
+    protected $_resultSet=null;
     // representing substructures/blocks
     
     /**
@@ -70,6 +71,7 @@ class Bestellung extends Page
     protected function getViewData()
     {
         // to do: fetch data for this view from the database
+
     }
     
     /**
