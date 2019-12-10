@@ -122,9 +122,7 @@ class Bestellung extends Page
                 <ul>
 MAIN;
                     for($i=0; $i<count($this->_pizzaName); $i++){
-                        echo "<li style=\"color: white\">";
-                        echo $this->_pizzaName[$i];
-                        echo "<br/><span data-price-euro=\"5,50\">5,50</span>€<br>
+                        echo "<li style=\"color: white\">", $this->_pizzaName[$i], "<br/><span data-price-euro=\"",$this->_pizzaPreis[$i],"\">",$this->_pizzaPreis[$i],"</span>€<br>
                         <img src=\"../Images/testi_pizza.png\" alt=\"Krasse Pizza\" width=\"100\" height=\"100\" >
                         <button>In den Warenkorb</button></li>";
                     }
@@ -149,18 +147,17 @@ EOT;
         <div>
             <select name="Warenkorb[]" size="5" multiple>
                 <option selected> Krasse Pizza</option>
-                <option> Tee Pizza</option>
             </select>           
-            <p style="color: white">Gesamtpreis: 12,00€</p>
+            <p style="color: white">Gesamtpreis: 5,50€</p>
         </div>
         <button>Element löschen</button>
         <button>Warenkorb leeren</button>
         <br>
         <br>
-        <form>
+        <form action="Kunde.php" method="post">
             <input type="text" name="adresse" value="" placeholder="Ihre Adresse" />
             <br>
-            <input type="button" value="Bestellen">
+            <input type="button" value="Bestellen"/>
         </form>
         <button>Verwerfen</button>
 WARENKORB;
