@@ -33,7 +33,11 @@ require_once './Page.php';
  */
 class Baecker extends Page
 {
-    // to do: declare reference variables for members 
+    // to do: declare reference variables for members
+    protected $_BP_ID=array();
+    protected $_BP_PizzaName=array();
+    protected $_BP_BID=array();
+    protected $_BP_Status=array();
     // representing substructures/blocks
     
     /**
@@ -69,7 +73,20 @@ class Baecker extends Page
      */
     protected function getViewData()
     {
-        // to do: fetch data for this view from the database
+        $sql="SELECT * FROM Bestellte_Pizza;";
+        $recordset=$this->_database->query($sql);
+        if (!$recordset)
+            throw new Exception("Fehler in Abfrage: ".$this->database->error);
+        $a=0;
+        while ($record=$recordset->fetch_assoc()){
+            $this->_BP_ID[$a]=$record["BP_ID"];
+            $this->_BP_PizzaName[$a]=$record["PizzenName"];
+            $this->_BP_BIDID[$a]=$record["fBestellID"];
+            $this->_BP_Status[$a]=$record["BP_Status"];
+            $a++;
+        }
+        $recordset->free();
+
     }
     
     /**
@@ -87,6 +104,7 @@ class Baecker extends Page
         $this->generatePageHeader('Baecker');
         // to do: call generateView() for all members
         // to do: output view of this page
+
         $this->generatePageFooter();
     }
     

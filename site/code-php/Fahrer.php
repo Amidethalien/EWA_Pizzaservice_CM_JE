@@ -33,7 +33,13 @@ require_once './Page.php';
  */
 class Fahrer extends Page
 {
-    // to do: declare reference variables for members 
+    // to do: declare reference variables for members
+    protected $_BestellID=array();
+    protected $_BestellName=array();
+    protected $_BestellPreis=array();
+    protected $_BestellAdresse=array();
+
+    protected $_BestellPizza=array();
     // representing substructures/blocks
     
     /**
@@ -69,7 +75,20 @@ class Fahrer extends Page
      */
     protected function getViewData()
     {
-        // to do: fetch data for this view from the database
+        $datum=date("o-m-d");
+        $sql="SELECT BestellID, BestellerName, Adresse, Preis FROM Bestellung WHERE Bestellzeitpunkt='$datum';";
+        $recordset=$this->_database->query($sql);
+        if (!$recordset)
+            throw new Exception("Fehler in Abfrage: ".$this->database->error);
+        $a=0;
+        while ($record=$recordset->fetch_assoc()){
+            $this->_BestellID[$a]=$record["BestellID"];
+            $this->_BestellName[$a]=$record["BestellerName"];
+            $this->_BestellAdresse[$a]=$record["Adresse"];
+            $this->_BestellPreis[$a]=$record["Preis"];
+            $a++;
+        }
+        $recordset->free();
     }
     
     /**

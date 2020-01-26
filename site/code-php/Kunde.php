@@ -34,7 +34,11 @@ require_once './Page.php';
 class Kunde extends Page
 {
     // to do: declare reference variables for members
+    protected $_BestellID=array();
+    protected $_BestellName=array();
+    protected $_BestellPreis=array();
 
+    protected $_BestellPizza=array();
     // representing substructures/blocks
     
     /**
@@ -70,7 +74,21 @@ class Kunde extends Page
      */
     protected function getViewData()
     {
-        // to do: fetch data for this view from the database
+        $datum=date("o-m-d");
+        $sql="SELECT BestellID, BestellerName, Preis FROM Bestellung WHERE Bestellzeitpunkt='$datum';";
+        $recordset=$this->_database->query($sql);
+        if (!$recordset)
+            throw new Exception("Fehler in Abfrage: ".$this->database->error);
+        $a=0;
+        while ($record=$recordset->fetch_assoc()){
+            $this->_BestellID[$a]=$record["BestellID"];
+            $this->_BestellName[$a]=$record["BestellerName"];
+            $this->_BestellPreis[$a]=$record["Preis"];
+            $a++;
+        }
+        $recordset->free();
+
+
     }
     
     /**
@@ -88,9 +106,9 @@ class Kunde extends Page
         $this->generatePageHeader('Kunde');
         // to do: call generateView() for all members
         // to do: output view of this page
-        echo <<<Testi
-        <p>Hallo Welt</p> 
-Testi;
+        echo <<<Kunde
+        
+Kunde;
 
         $this->generatePageFooter();
     }
@@ -109,13 +127,22 @@ Testi;
         parent::processReceivedData();
         $Name = $_POST["name"];
         $Adresse = $_POST["adresse"];
-        $sql="INSERT INTO Bestellung(BestellerName, Adresse) values('$Name', '$Adresse');";
+        $sql="INSERT INTO Bestellung(BestellerName, Adresse, Preis) values('$Name', '$Adresse', 5.5);";
         if ($this->_database->query($sql)===TRUE){
-            return none;
         }else{
             echo "Error; " . $sql . "<br>" .$this->_database->error;
         }
-
+        $sql="SELECT BestellID FROM Bestellung WHERE Bestellername='$Name'  ORDER BY BestellID DESC;";
+        $recordset=$this->_database->query($sql);
+        if (!$recordset)
+            throw new Exception("Fehler in Abfrage: ".$this->database->error);
+        $record=$recordset->fetch_assoc();
+        $BID=$record["BestellID"];
+        $sql="INSERT INTO Bestellte_Pizza(PizzenName,fBestellID, BP_Status) VALUES ('Krasse Pizza', '$BID', 'bestellt');";
+        if ($this->_database->query($sql)===TRUE){
+        }else{
+            echo "Error; " . $sql . "<br>" .$this->_database->error;
+        }
 
      }
     public static function main() 
