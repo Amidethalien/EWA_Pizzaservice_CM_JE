@@ -33,7 +33,8 @@ require_once './Page.php';
  */
 class Kunde extends Page
 {
-    // to do: declare reference variables for members 
+    // to do: declare reference variables for members
+
     // representing substructures/blocks
     
     /**
@@ -103,24 +104,20 @@ Testi;
      *
      * @return none 
      */
-    protected function processReceivedData() 
+    protected function processReceivedData()
     {
         parent::processReceivedData();
-        // to do: call processReceivedData() for all members
-    }
+        $Name = $_POST["name"];
+        $Adresse = $_POST["adresse"];
+        $sql="INSERT INTO Bestellung(BestellerName, Adresse) values('$Name', '$Adresse');";
+        if ($this->_database->query($sql)===TRUE){
+            return none;
+        }else{
+            echo "Error; " . $sql . "<br>" .$this->_database->error;
+        }
 
-    /**
-     * This main-function has the only purpose to create an instance 
-     * of the class and to get all the things going.
-     * I.e. the operations of the class are called to produce
-     * the output of the HTML-file.
-     * The name "main" is no keyword for php. It is just used to
-     * indicate that function as the central starting point.
-     * To make it simpler this is a static function. That is you can simply
-     * call it without first creating an instance of the class.
-     *
-     * @return none 
-     */    
+
+     }
     public static function main() 
     {
         try {

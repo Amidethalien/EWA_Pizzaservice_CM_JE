@@ -155,9 +155,10 @@ EOT;
         <br>
         <br>
         <form action="Kunde.php" method="post">
+            <input type="text" name="name" value="" placeholder="Ihr Name">
             <input type="text" name="adresse" value="" placeholder="Ihre Adresse" />
             <br>
-            <input type="button" value="Bestellen"/>
+            <input type="submit" value="Bestellen"/>
         </form>
         <button>Verwerfen</button>
 WARENKORB;
