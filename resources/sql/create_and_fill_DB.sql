@@ -10,14 +10,16 @@ create table Pizza(
 );
 
 create table Bestellung(
-	BestellID		int primary key,
+	BestellID		int PRIMARY KEY AUTO_INCREMENT,
+	BestellerName		varchar(255),
 	Adresse			varchar(255),
+	Preis			float,
 	Bestellzeitpunkt	date DEFAULT CURRENT_TIMESTAMP
 );
 
 create table Bestellte_Pizza(
-	BP_ID			int primary key,
-	PizzenID		varchar(255),
+	BP_ID			int primary key AUTO_INCREMENT,
+	PizzenName		varchar(255),
 	fBestellID		int,
 	BP_Status		varchar(255),
 	constraint foreign key (fBestellID) references  Bestellung(BestellID) on delete cascade on update restrict

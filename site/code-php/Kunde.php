@@ -105,7 +105,19 @@ class Kunde extends Page
         $this->getViewData();
         $this->generatePageHeader('Kunde');
         // to do: call generateView() for all members
-        // to do: output view of this page
+        echo<<<Listenanfang
+        
+        <ul>
+        
+Listenanfang;
+        for ($i=0; $i<count($this->_BestellID); $i++){
+            echo "<li>
+                    <span>BestellID:",$this->_BestellID[$i],"</span><br>
+                    <span></span>
+                  </li>   ";
+        }
+
+
         echo <<<Kunde
         
 Kunde;
