@@ -5,144 +5,327 @@
     <meta charset="UTF-8">
     <title>Testi Pizzaservice</title>
 
-
-
-
 </head>
 
 <body>
 
-    <nav class="topnav">
-        <button href="#" onclick="event.srcElement.classList.toggle('active');">Bestellseite</button>
-        <button href="#" onclick="event.srcElement.classList.toggle('active');">Übersicht</button>
-        <button href="#" onclick="event.srcElement.classList.toggle('active');">Zubereitung</button>
-        <button href="#" onclick="event.srcElement.classList.toggle('active');">Auslieferung</button>
+<nav class="topnav">
+    <button href="#" onclick="event.srcElement.classList.toggle('active');">Bestellseite</button>
+    <button href="#" onclick="event.srcElement.classList.toggle('active');">Übersicht</button>
+    <button href="#" onclick="event.srcElement.classList.toggle('active');">Zubereitung</button>
+    <button href="#" onclick="event.srcElement.classList.toggle('active');">Auslieferung</button>
 
-        <div style="position: absolute; right: 0;">
-            <button href="" onclick="window.open('https://ewa_2.h-da.io/ewa_2/EWA_Praktikum/'); ">
-                Praktikumsseite</button>
+    <div style="position: absolute; right: 0;">
+        <button href="" onclick="window.open('https://ewa_2.h-da.io/ewa_2/EWA_Praktikum/'); ">
+            Praktikumsseite</button>
 
-            <button href="" onclick="window.open('https://github.com/Amidethalien/EWA_Pizzaservice_CM_JE');">
-                Github</button>
+        <button href="" onclick="window.open('https://github.com/Amidethalien/EWA_Pizzaservice_CM_JE');">
+            Github</button>
+    </div>
+
+
+
+</nav>
+
+<main>
+
+
+    <!--<div class="contentHolder"></div> -->
+
+    <embed id="contentHolder" src="code-php/Bestellung.php" width=100% height="1000" style="overflow-x: hidden;">
+
+    <div id="shoppingCart">
+
+        <button style="cursor:pointer; top 0; width: 100%; z-index: 10; text-align: left;" class="drawerButton" disabled>Shoppingcart</button>
+
+
+        <div style="position: fixed; right: 0px;">
+            <button style="cursor:pointer; padding: 10px" class="drawerButton" onclick="toggleCart()">&#128722;</button>
+            <div class="cartContents" style="background-color: crimson; border-radius: 20%; text-align: center">2</div>
         </div>
 
 
-
-    </nav>
-
-    <main>
-
-
-        <!--<div class="contentHolder"></div> -->
-
-        <embed id="contentHolder" src="code-php/Bestellung.php" width=100% height="1000" style="overflow-x: hidden;">
-
-        <div id="shoppingCart">
-
-            <button style="cursor:pointer; top 0; width: 100%; z-index: 10; text-align: left;" class="drawerButton" disabled>Shoppingcart</button>
-
-
-            <div style="position: fixed; right: 0px;">
-                <button style="cursor:pointer; padding: 10px" class="drawerButton" onclick="toggleCart()">&#128722;</button>
-                <div class="cartContents" style="background-color: crimson; border-radius: 20%; text-align: center">2</div>
+        <!-- Warentemplate begins here -->
+        <div id="warenTemplate" onclick="collapseDrawer()">
+            <div id="templateElement">
+                <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="30%" height="30%" style="float: left;">
+                <div>TeePizza <span>6.50€</span></div>
+                <div id="buttonHolder">
+                    <button id="buttonLeft">+</button>
+                    <div id="Warenindex">1</div>
+                    <button id="buttonRight">-</button>
+                </div>
             </div>
+        </div>
+        <!-- optional drawer -->
+        <div class="drawerContent">
+            <div class="bar"></div>
+            <div class="dot" id="Step1" onclick="event.srcElement.classList.toggle('active');"></div>
+            <span class="content" id="Progress1">B</span>
+            <div class="dot" id="Step2"></div>
+            <span class="content" id="Progress2">Z</span>
+            <div class="dot" id="Step3"></div>
+            <span class="content" id="Progress3">L</span>
+            <div class="dot" id="Step4"></div>
+
+            <!--<div id="currentStep">Bestellt</div>-->
 
 
-            <!-- Warentemplate begins here -->
-            <div id="warentemplate" style="width: 100%; display: inline-table; position: relative;" onclick="collapseDrawer()">
-                <div style="display: inline; float: left; pointer-events: none;">
-                    <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="30%" height="30%" style="float: left;">
-                    <div>TeePizza <span>6.50€</span>
+        </div>
 
-                    </div>
+        <!-- Warentemplate ends here -->
 
+        <!-- Warentemplate begins here --
+        <div id="warenTemplate" onclick="collapseDrawer()">
+            <div style="display: inline; float: left;">
+                <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="30%" height="30%" style="float: left;">
+                <div>Krasse Pizza<span>5.50€</span>
                     <div style=" position: absolute; display:inline-flex; right: 2.5%; bottom:0;">
-                        <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%; pointer-events: all;">+</button>
+                        <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%">+</button>
                         <div>1</div>
-                        <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%; padding-left: 2px; padding-right: 3px; text-align: center;  pointer-events: all;">-</button>
+                        <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%; padding-left: 2px; padding-right: 3px; text-align: center;">-</button>
                     </div>
 
                 </div>
 
             </div>
-            <!-- optional drawer -->
-            <div class="drawerContent">
-                <button class="drawerButton">Sardellen</button>
-                <button class="drawerButton">Artischocke</button>
-                <button class="drawerButton">Pilze</button>
-            </div>
-
-            <!-- Warentemplate ends here -->
-
-            <!-- Warentemplate begins here -->
-            <div id="warentemplate" style="width: 100%; display: inline-table; position: relative;" onclick="collapseDrawer()">
-                <div style="display: inline; float: left;">
-                    <img src="../Images/testi_pizza.png" alt="Krasse Pizza" width="30%" height="30%" style="float: left;">
-                    <div>Krasse Pizza<span>5.50€</span>
-                        <div style=" position: absolute; display:inline-flex; right: 2.5%; bottom:0;">
-                            <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%">+</button>
-                            <div>1</div>
-                            <button style="padding:1px; background-color:orangered;color: black; border-radius: 25%; padding-left: 2px; padding-right: 3px; text-align: center;">-</button>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <!-- optional drawer -->
-            <div class="drawerContent">
-                <button class="drawerButton">Sardellen</button>
-                <button class="drawerButton">Artischocke</button>
-                <button class="drawerButton">Pilze</button>
-            </div>
-
-            <!-- Warentemplate ends here -->
-
-
-
-
-
-
-
-            <!--<button id="warentemplate" style="width: 100%;display: grid; grid-template-columns: auto auto auto; grid-template-rows: auto auto" onclick="collapseDrawer()">
-                
-                <div > <img src="/site/Images/testi_pizza.png" alt="Krasse Pizza" width="20%" height="20%">
-                    <div>Warenname</div>
-                </div>
-
-                <div style="position: absolute;">
-                    <button style="padding:0; background-color:orangered;color: black; border-radius: 25%">+</button>
-                    <div>5</div>
-                    <button style="padding:0; background-color:orangered;color: black; border-radius: 25%"> - </button>
-                </div>
-                
-                <div class="drawerContent">
-                    <button class="drawerButton">1</button>
-                    <button class="drawerButton">2</button>
-                    <button class="drawerButton">3</button>
-                </div>
-            </button>
-            <div>content 1</div>
-            <div>content 2</div>
-            <div>content 3</div>
-            -->
 
         </div>
+        <!-- optional drawer --
+        <div class="drawerContent">
+            <button class="drawerButton">Sardellen</button>
+            <button class="drawerButton">Artischocke</button>
+            <button class="drawerButton">Pilze</button>
+        </div>
 
+        <!-- Warentemplate ends here -->
 
+        <!--<button id="warentemplate" style="width: 100%;display: grid; grid-template-columns: auto auto auto; grid-template-rows: auto auto" onclick="collapseDrawer()">
 
-    </main>
+            <div > <img src="/site/Images/testi_pizza.png" alt="Krasse Pizza" width="20%" height="20%">
+                <div>Warenname</div>
+            </div>
 
+            <div style="position: absolute;">
+                <button style="padding:0; background-color:orangered;color: black; border-radius: 25%">+</button>
+                <div>5</div>
+                <button style="padding:0; background-color:orangered;color: black; border-radius: 25%"> - </button>
+            </div>
 
+            <div class="drawerContent">
+                <button class="drawerButton">1</button>
+                <button class="drawerButton">2</button>
+                <button class="drawerButton">3</button>
+            </div>
+        </button>
+        <div>content 1</div>
+        <div>content 2</div>
+        <div>content 3</div>
+        -->
+
+    </div>
+
+</main>
 
 </body>
 
 <footer>
 
 </footer>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<!--<link rel="stylesheet" type="text/css" href="css/style_.css">-->
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Lato", sans-serif;
+        background-color: darkgray;
+    }
+
+    nav {
+        position: absolute;
+        z-index: 15;
+        width: 100%;
+        overflow: hidden;
+        background-color: #333;
+
+    }
+
+    button {
+
+        float: left;
+        color: darkgray;
+        text-align: center;
+        padding: 18px;
+        background-color: #333;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        font-size: 17px;
+
+    }
+
+    button:hover {
+        color: black;
+        background-color: lightgray;
+    }
+
+    active {
+        color: lightgray;
+        background-color: darkgreen;
+    }
+
+
+    .drawer {
+        background-color: #555;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    active,
+    .drawer:hover {
+        background-color: #777;
+    }
+
+    .drawerContent {
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+        background-color: #eee;
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        border-radius: 50px;
+        z-index: 20;
+    }
+
+    .drawerButton {
+        background-color: #555;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .drawerButton:hover {
+        background-color: #999;
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-flex;
+    }
+
+    #shoppingCart {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        z-index: 5;
+    }
+
+
+    .warenTemplate{
+        width: 100%;
+        display: inline-table;
+        position: relative;
+        z-index: 50;
+
+    }
+    .templateElement{
+        width: 100%;
+
+    }
+
+    .buttonHolder{
+
+        position: absolute;
+        display:inline-flex;
+        right: 2.5%;
+        bottom:0;
+
+    }
+    .buttonLeft{
+        padding:1px;
+        background-color:orangered;
+        color: black;
+        border-radius: 25%;
+        pointer-events: all;
+
+    }
+    .buttonRight{
+        padding:1px;
+        background-color:orangered;
+        color: black;
+        float: right;
+        border-radius: 25%;
+        padding-left: 2px;
+        padding-right: 3px;
+        text-align: center;
+        pointer-events: all;
+
+    }
+
+    .drawerContent .bar {
+        position: absolute;
+        background-color: coral;
+        width: 100%;
+        border-radius: 50px;
+        height: 3%;
+        z-index: 25;
+    }
+
+    .drawerContent .dot {
+        width: 0;
+        height: 0;
+        padding:5%;
+        background-color: darkcyan;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 30;
+    }
+
+    .dot:active {
+        background-color: blue;
+    }
+
+    .dot:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: black;
+    }
+
+    .drawerContent .content {
+        z-index: 30;
+    }
+
+</style>
+
+
+
 <script src="code-js/main.js"></script>
 
 </html>
-<!--testi-->

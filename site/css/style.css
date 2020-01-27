@@ -1,10 +1,10 @@
-.body {
+body {
     margin: 0;
     font-family: "Lato", sans-serif;
     background-color: darkgray;
 }
 
-.nav {
+nav {
     position: absolute;
     z-index: 15;
     width: 100%;
@@ -13,7 +13,7 @@
 
 }
 
-.button {
+button {
 
     float: left;
     color: darkgray;
@@ -27,18 +27,18 @@
 
 }
 
-.button:hover {
+button:hover {
     color: black;
     background-color: lightgray;
 }
 
-.active {
+active {
     color: lightgray;
     background-color: darkgreen;
 }
 
 
-.drawer {
+drawer {
     background-color: #555;
     color: white;
     cursor: pointer;
@@ -50,12 +50,12 @@
     font-size: 15px;
 }
 
-.active,
-.drawer:hover {
+active,
+drawer:hover {
     background-color: #777;
 }
 
-.drawerContent {
+drawerContent {
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
@@ -63,7 +63,7 @@
     background-color: #777;
 }
 
-.drawerButton {
+drawerButton {
     background-color: #555;
     color: white;
     cursor: pointer;
@@ -75,7 +75,7 @@
     font-size: 15px;
 }
 
-.drawerButton:hover {
+drawerButton:hover {
     background-color: #999;
 }
 
